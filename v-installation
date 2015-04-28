@@ -1,0 +1,58 @@
+
+============================ INSTALL ========================================
+npm install -g bower
+npm install -g ember-cli
+npm install -g sails sane-cli
+sane new mkfc -d mongo
+NO // in mkfc/server: npm install
+NO //	in mkfc/client: npm install
+NO //	in mkfc/client: bower install
+
+in the server folder of your project: 
+  rm -rf node_modules/sails-hook-dev
+  npm i balderdashy/sails-hook-dev --save
+  
+in mkfc: sane generate resource user name:string age:number
+in mkfc: sane up
+
+
+  $ bower install papa.parse
+
+In Brocfile
+  app.import('bower_components/papa.parse/papaparse.js');
+  
+$ ember install ember-file-drop
+
+from package.json Remove:
+  "ember-cli-content-security-policy": "0.4.0",
+  
+
+
+============================ RESOURCES ========================================
+
+Training on Sails:
+- see 100percentjs.com
+- and how-to-sane
+- @ErikCH has some nice ones too
+- otherwise http://www.programwitherik.com/the-latest-going-ons-at-program-with-erik/
+
+Mongo Training
+- http://www.raweng.com/blog/2014/09/24/how-to-get-started-with-sails-js/
+- https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-12-04
+
+
+============================ OLD ========================================
+
+$ bower install ember-pouch --save
+ 
+In Brocfile
+  app.import('bower_components/pouchdb/dist/pouchdb.js');
+  app.import('bower_components/relational-pouch/dist/pouchdb.relational-pouch.js');
+  app.import('bower_components/ember-pouch/dist/globals/main.js');
+
+
+http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
+  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+  echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+  sudo apt-get update
+  sudo apt-get install -y mongodb-org
